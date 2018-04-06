@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+    bitcoind-regtest:
+        build: bitcoin
+        environment:
+            - CHAIN=regtest
+
+    bitcoind-regtest-2:
+        build: bitcoin
+        environment:
+            - CHAIN=regtest-2
+        depends_on:
+            - bitcoind-regtest
+
