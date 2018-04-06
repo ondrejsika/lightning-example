@@ -13,3 +13,13 @@ services:
         depends_on:
             - bitcoind-regtest
 
+    lnd-regtest:
+        build: lnd
+        depends_on:
+            - bitcoind-regtest
+
+    lnd-regtest-2:
+        build: lnd
+        command: ["--bitcoind.rpchost=bitcoind-regtest-2:38332", "--bitcoind.zmqpath=tcp://bitcoind-regtest-2:38331", "--externalip=172.17.0.3"]
+        depends_on:
+            - bitcoind-regtest-2
