@@ -12,7 +12,7 @@ cp /root/bitcoin-"$CHAIN".conf /root/.bitcoin/bitcoin.conf
 # workarround for regtest case
 if [ $CHAIN = "regtest" ]; then
     echo "workarround for regtest"
-    (sleep 10; bitcoin-cli generate 1) &
+    (sleep 10; bitcoin-cli generate ${GENERATEBLOCKS:-1}) &
 fi
 
 echo "Parameters for bitcoind command are (if any):" $@

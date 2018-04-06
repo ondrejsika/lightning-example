@@ -4,6 +4,7 @@ services:
         build: bitcoin
         environment:
             - CHAIN=regtest
+            - GENERATEBLOCKS=1000
 
     bitcoind-regtest-2:
         build: bitcoin
